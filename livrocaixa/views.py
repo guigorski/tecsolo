@@ -1,6 +1,6 @@
-from django.shortcuts import render,render_to_response, RequestContext
+from django.shortcuts import render,render_to_response
 from django.views.generic import ListView
-
+from django.template import RequestContext
 from .models import *
 import datetime
 from django.db.models import Sum
