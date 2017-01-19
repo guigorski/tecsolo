@@ -1,0 +1,35 @@
+{% extends 'livrocaixa/base.html' %}
+
+{% block content %}
+
+
+    <script>
+  function cont(){
+     var conteudo = document.getElementById('post').innerHTML;
+     tela_impressao = window.open('about:blank');
+     tela_impressao.document.write(conteudo);
+     tela_impressao.window.print();
+     tela_impressao.window.close();
+  }
+  </script>
+
+<div id="post">
+        <h1>{{ amostra.Cliente }}</h1>
+        <br></br>
+
+        <p>Valor: {{amostra.Valor}}</p>
+                <p>Data: {{amostra.Data}}</p>
+                        <p>Propriedade: {{amostra.Propriedade}}</p>
+                                <p>Gleba: {{amostra.Gleba}}</p>
+                                        <p>Municipio: {{amostra.Municipio}}</p>
+                                                <p>Analise: {{amostra.Amostras}}</p>
+                                                        <p>Pago: {{amostra.Pago}}</i></p>
+    </div>
+
+    <input type="button" onclick="cont();" value="Imprimir">
+
+    <a class="btn btn-default" href ="{% url 'amostra_edit' pk=amostra.pk %}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+
+
+
+{% endblock %}

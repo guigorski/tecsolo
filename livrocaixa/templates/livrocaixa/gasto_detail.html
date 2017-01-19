@@ -1,0 +1,33 @@
+{% extends 'livrocaixa/base.html' %}
+
+{% block content %}
+
+
+    <script>
+  function cont(){
+     var conteudo = document.getElementById('post').innerHTML;
+     tela_impressao = window.open('about:blank');
+     tela_impressao.document.write(conteudo);
+     tela_impressao.window.print();
+     tela_impressao.window.close();
+  }
+  </script>
+
+<div id="post">
+        <h1>{{ gasto.Nome }}</h1>
+<p></p>
+        <p>Valor: {{gasto.Valor}}</p>
+
+        <p>Data: {{gasto.Data}}</p>
+
+    </div>
+
+    <input type="button" onclick="cont();" value="Imprimir">
+
+    <a class="btn btn-default" href ="{% url 'gasto_edit' pk=gasto.pk %}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+
+
+
+
+
+{% endblock %}

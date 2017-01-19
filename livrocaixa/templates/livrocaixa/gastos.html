@@ -1,0 +1,108 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>TecSolo Adicionar Amostra</title>
+<link rel="stylesheet" href="{% static 'css/styles2.css' %}">
+<link rel="stylesheet" href="{% static 'css/font-awesome/css/font-awesome.min.css' %}">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+</head>
+
+<script>
+        function AjudaRecipe() {
+            alert("Aqui esta a lista dos clientes que ja efetuaram o pagamento das analises. \n\n -Para adicionar uma nova receita basta clicar no botao adicionar receita \n");
+        }
+</script>
+<body>
+
+		<section id="body" class="width">
+			<aside id="sidebar" class="column-left">
+
+			<header>
+				<h1><a href="">TecSolo</a></h1>
+
+				<h2>Livro caixa!</h2>
+
+			</header>
+
+			<nav id="mainnav">
+  				<ul>
+																 <li><a href="{% url 'pagos' %}">Pedidos Pagos</a></li>
+                           		 <li><a href="{% url 'pendentes' %}">Pedidos Pendentes</a></li>
+															 <li class="selected-item"><a href="{% url 'gastos' %}">Gastos</a></li>
+                               <li><a href="{% url 'reducao' %}">Reducao</a></li>
+
+                                <h3><li><a href="{% url 'add' %}"><i class="fa fa-plus-square" aria-hidden="true"></i> Adicionar amostras</a></li></h3>
+
+                        	</ul>
+
+										<button type="button" onclick="AjudaRecipe()" class="help-button"/> Ajuda  <i class="fa fa-info-circle"></i></button>
+			</nav>
+
+
+
+			</aside>
+			<section id="content" class="column-right">
+
+
+
+			<article class="expanded">
+
+
+			</article>
+
+			<div>
+			    <h1>Adicionar Gastos</h1>
+			</div>
+      <br></br>
+
+
+
+      <button class='btn' onclick="window.location.href='{% url 'new_gastos' %}'"><i class="fa fa-plus" aria-hidden="true"></i> Adicionar gasto</button>
+
+      <form method="get" action="/search_results/">
+
+<br></br>
+      <label for="id_q">Busca: </label>
+                 <input type="text" name="q" id="id_q"/>
+                 <input type="submit" value="Enviar"/>
+
+
+              </form>
+			<table>
+			<tbody>
+			<tr>
+			<th>Nome</th>
+			<th>Valor</th>
+			</tr>
+
+			<tr>
+				<br></br>
+				{% for amostra in gastos %}
+
+						</div>
+
+			<td><a href="{% url 'livrocaixa.views.gasto_detail' pk=amostra.pk %}"></h1><i class="fa fa-chevron-right" aria-hidden="true"></i> {{ amostra.Nome }}</a>
+			</td>
+			<td>{{amostra.Valor}}</tb>
+			</tr>
+				{% endfor %}
+			</tbody>
+			</table>
+
+
+
+			<footer class="clear">
+				<p>&copy; 2016 Guilherme Gorski. <a href="https://www.fb.me/GuilhermeGorskiSoftware">Projeto e Desenvolvimento de software</a></p>
+			</footer>
+
+			</section>
+
+		<div class="clear"></div>
+
+	</section>
+
+
+</body>
+</html>

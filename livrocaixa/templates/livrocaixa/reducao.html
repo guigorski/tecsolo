@@ -1,0 +1,128 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>TecSolo Adicionar Amostra</title>
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/font-awesome/css/font-awesome.min.css' %}">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+</head>
+
+<body>
+
+		<section id="body" class="width">
+			<aside id="sidebar" class="column-left">
+
+			<header>
+				<h1><a href="">TecSolo</a></h1>
+
+				<h2>Livro caixa!</h2>
+
+			</header>
+
+			<nav id="mainnav">
+  				<ul>
+																 <li><a href="{% url 'pagos' %}">Pedidos Pagos</a></li>
+
+                           		 <li><a href="{% url 'pendentes' %}">Pedidos Pendentes</a></li>
+															 <li><a href="{% url 'gastos' %}">Gastos</a></li>
+                               <li class="selected-item"><a href="{% url 'reducao' %}">Reducao</a></li>
+															 <h3><li><a href="{% url 'add' %}"><i class="fa fa-plus-square" aria-hidden="true"></i> Adicionar amostras</a></li></h3>
+
+                        	</ul>
+			</nav>
+
+
+
+			</aside>
+			<section id="content" class="column-right">
+
+
+
+			<article class="expanded">
+
+
+			</article>
+
+			<div>
+				<h1>Em construção... <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+<span class="sr-only">Loading...</span>
+					<br></br>
+			</div>
+
+<table>
+<tbody>
+	<tr>
+	<th>Mês</th>
+	<th>Arrecadação</th>
+	</tr>
+	<tr>
+	<td>JANEIRO</td>
+	<td>{{reducao}}</td>
+	</tr>
+	<tr>
+	<td>FEVEREIRO</td>
+	<td>-</td>
+	</tr>
+	<tr>
+	<td>MARÇO</td>
+	<td>-</td>
+	</tr>
+	<tr>
+	<td>ABRIL</td>
+	<td>-</td>
+	</tr>
+	<tr>
+	<td>MAIO</td>
+	<td>-</td>
+	</tr>
+	<tr>
+	<td>JUNHO</td>
+	<td>-</td>
+	</tr>
+	<tr>
+	<td>JULHO</td>
+	<td>-</td>
+	</tr>
+	<tr>
+	<td>AGOSTO</td>
+	<td>-</td>
+	</tr>
+	<tr>
+	<td>SETEMBRO</td>
+	<td>-</td>
+	</tr>
+	<tr>
+	<td>OUTUBRO</td>
+	<td>-</td>
+	</tr>
+	<tr>
+	<td>NOVEMBRO</td>
+	<td>-</td>
+	</tr>
+	<tr>
+	<td>DEZEMBRO</td>
+	<td>-</td>
+	</tr>
+</tbody>
+</table>
+
+				 <br></br>
+				 	 <br></br>
+					 <br></br>
+
+
+			<footer class="clear">
+				<p>&copy; 2016 Guilherme Gorski. <a href="https://www.fb.me/GuilhermeGorskiSoftware">Projeto e Desenvolvimento de software</a></p>
+			</footer>
+
+			</section>
+
+		<div class="clear"></div>
+
+	</section>
+
+
+</body>
+</html>

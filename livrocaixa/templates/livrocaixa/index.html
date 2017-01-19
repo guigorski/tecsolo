@@ -1,0 +1,77 @@
+{% load staticfiles %}
+
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>TecSolo Adicionar Amostra</title>
+<link rel="stylesheet" href="{% static 'css/font-awesome/css/font-awesome.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+</head>
+
+<body>
+
+		<section id="body" class="width">
+			<aside id="sidebar" class="column-left">
+
+			<header>
+				<h1><a href="#">TecSolo</a></h1>
+
+				<h2>Livro caixa!</h2>
+
+			</header>
+
+			<nav id="mainnav">
+  				<ul>
+
+						<li><a href="{% url 'pagos' %}">Pedidos Pagos</a></li>
+
+					<li><a href="{% url 'pendentes' %}">Pedidos Pendentes</a></li>
+					<li><a href="{% url 'gastos' %}">Gastos</a></li>
+
+					<li><a href="{% url 'reducao' %}">Reducao</a></li>
+					 <li class="selected-item"><a href="{% url 'add' %}">Add</a></li>
+                        	</ul>
+			</nav>
+
+
+
+			</aside>
+			<section id="content" class="column-right">
+
+			<article>
+
+
+
+				</table>
+				<p>&nbsp;</p>
+
+
+				{% block content %}
+				<h1>Adicionar nova Amostra</h1>
+				<br></br>
+				<form method="POST" class="post-form">{% csrf_token %}
+					{{ form.as_p }}
+
+
+					<button onclick="window.location.href='{% url 'add' %}'" type="submit" class="save btn btn-default">Salvar</button>
+				</form>
+				{% endblock %}
+
+
+
+			<footer class="clear">
+				<p>&copy; 2016 Guilherme Gorski. <a href="https://www.fb.me/GuilhermeGorskiSoftware">Projeto e Desenvolvimento de software</a></p>
+			</footer>
+
+		</section>
+
+		<div class="clear"></div>
+
+	</section>
+
+
+</body>
+</html>
